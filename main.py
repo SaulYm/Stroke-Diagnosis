@@ -1,11 +1,13 @@
 # Importar las librerias necesarias
 import streamlit as st
 import pandas as pd
+import tensorflow as tf
+from tensorflow import keras
 from streamlit.elements.arrow import Data
 from streamlit.elements.legacy_altair import generate_chart
 
 #from tensorflow import keras
-from tensorflow.keras.models import load_model
+#from tensorflow.keras.models import load_model
 #import tensorflow as tf
 #from keras.models import load_model
 
@@ -13,7 +15,7 @@ from tensorflow.keras.models import load_model
 model = ''
 #Cargar los datos
 if model == '':
-    model = load_model('ANN.h5')
+    model = tf.keras.models.load_model("ANN.h5")
     
 # Titulo
 st.title('JAVIER SE LA COME')
