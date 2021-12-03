@@ -4,16 +4,20 @@ import pandas as pd
 from streamlit.elements.arrow import Data
 from streamlit.elements.legacy_altair import generate_chart
 
+#from tensorflow import keras
+from tensorflow.keras.models import load_model
+#import tensorflow as tf
+#from keras.models import load_model
+
 
 #Path del modelo entrenado
-'''
+
 MODEL_PATH = '/ANN.h5'
 #Cargar los datos
 model = ''
 if model == '':
     model = load_model(MODEL_PATH)
 
-'''
 
 
 
@@ -29,10 +33,9 @@ def main():
     st.subheader('Artificial Neural Network')
     
     # Funcion para poner los parametros del sidebar
-    def user_input_parameters():
+    def user_input_parameters(): 
         
         # Variables
-
         gender_dic = {'Male':0, 'Female':1, 'Other':2}
         gender = st.sidebar.selectbox(
                     'Seleccione su género',
@@ -89,26 +92,18 @@ def main():
     query_df = user_input_parameters()
 
     st.write(query_df)
-    '''
+
     if st.button('RUN'):
         predict = model.predict(query_df)
         if predict == 1:
             st.warning('Propenso a derrame')
         else:
             st.success('No propenso a derrame')
-    '''
 
 
 
 
 if __name__ == '__main__':
     main()
-
-    
-
-#from tensorflow import keras
-#from tensorflow.keras.models import load_model
-#import tensorflow as tf
-#from keras.models import load_model
 
 
