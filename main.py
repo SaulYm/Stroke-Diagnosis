@@ -13,16 +13,15 @@ from tensorflow.keras.models import load_model
 #Path del modelo entrenado
 
 MODEL_PATH = '/ANN.h5'
-#Cargar los datos
-model = ''
-if model == '':
-    model = load_model(MODEL_PATH)
-
-
 
 
 
 def main():
+
+    model = ''
+    #Cargar los datos
+    if model == '':
+        model = load_model(MODEL_PATH)
     
     # Titulo
     st.title('JAVIER SE LA COME')
@@ -106,4 +105,5 @@ def main():
 if __name__ == '__main__':
     main()
 
+    
 
