@@ -85,14 +85,14 @@ query_df = query_df.replace({"Male":0, "Female":1, "Other":2, "No":0, "Yes":1, "
                          "Rural":0,"Urban":1,"formerly smoked":0, "never smoked":1, "smokes":2, "Unknown":3})
 #Falta arreglar esto ;v
 if st.button('RUN'):
-    
+
     query_df = preprocessing.normalize(query_df)
     query_df = np.asarray(query_df).astype(np.float16)
 
     st.write(query_df)
-    
+
     predict = model.predict(query_df)
-    if predict == 1:
+    if predict >= 0.5:
         st.warning('Propenso a derrame')
     else:
         st.success('No propenso a derrame')
@@ -100,3 +100,4 @@ if st.button('RUN'):
 #if __name__ == '__main__':
     #main()
 
+    
