@@ -36,16 +36,14 @@ def user_input_parameters():
     # Variables
     options = ['No','Yes']
 
-
-
     gender_opc = ['Male', 'Female', 'Other']
     gender = st.sidebar.selectbox('Seleccione su género', gender_opc)
 
     age = st.sidebar.text_input('Ingrese su edad')
+    
+    hypertension = st.sidebar.radio('¿Sufre de hipertensión?', options)
 
     heart_disease = st.sidebar.radio('¿Sufre de problemas al corazón?', options)
-
-    hypertension = st.sidebar.radio('¿Sufre de hipertensión?', options)
 
     ever_married = st.sidebar.radio('¿Alguna vez se casó?', options)
 
@@ -92,6 +90,7 @@ if st.button('RUN'):
     st.write(query_df)
 
     predict = model.predict(query_df)
+    st.write(predict)
     if predict >= 0.5:
         st.warning('Propenso a derrame')
     else:
