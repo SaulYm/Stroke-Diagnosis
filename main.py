@@ -7,7 +7,10 @@ import numpy as np
 from streamlit.elements.arrow import Data
 from streamlit.elements.legacy_altair import generate_chart
 
+from sklearn.preprocessing import StandardScaler
+
 from tensorflow.keras.models import load_model
+
 
 from sklearn import preprocessing
 
@@ -87,7 +90,10 @@ if st.button('RUN'):
     query_df = preprocessing.normalize(query_df)
     query_df = np.asarray(query_df).astype(np.float16)
 
+    query_df = preprocessing.StandardScaler().transform(query_df)
+
     st.write(query_df)
+
 
     predict = model.predict(query_df)
     st.write(predict)
