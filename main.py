@@ -91,12 +91,10 @@ if st.button('RUN'):
 
     predict = model.predict(query_df)
     st.write(predict)
-    if predict >= 0.5:
+    if predict >= 0.05:
         st.warning('Propenso a derrame')
     else:
         st.success('No propenso a derrame')
 
 #if __name__ == '__main__':
     #main()
-
-    
