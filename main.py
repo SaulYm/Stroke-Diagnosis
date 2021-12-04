@@ -90,9 +90,8 @@ if st.button('RUN'):
         st.image('https://www.clikisalud.net/wp-content/uploads/2017/10/pasos.png')
     else:
         st.success('No propenso a derrame')
-
-
-
+        st.text('insertar texto')
+        st.image('https://grillodeyucatan.com/wp-content/uploads/2019/07/0723_CEREBRO2.jpg')
 
     
 
