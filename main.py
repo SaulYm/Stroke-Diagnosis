@@ -9,6 +9,8 @@ from streamlit.elements.legacy_altair import generate_chart
 
 from tensorflow.keras.models import load_model
 
+from sklearn import preprocessing
+
 #from tensorflow import keras
 #from tensorflow.keras.models import load_model
 #import tensorflow as tf
@@ -84,6 +86,7 @@ query_df = query_df.replace({"Male":0, "Female":1, "Other":2, "No":0, "Yes":1, "
 #Falta arreglar esto ;v
 if st.button('RUN'):
     query_df = np.asarray(query_df).astype(np.float16)
+    query_df = preprocessing.normalize(query_df)
     predict = model.predict(query_df)
     if predict == 1:
         st.warning('Propenso a derrame')
@@ -92,5 +95,3 @@ if st.button('RUN'):
 
 #if __name__ == '__main__':
     #main()
-
-    
