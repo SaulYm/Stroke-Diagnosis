@@ -22,7 +22,6 @@ st.title('Stroke Prediction based on Artificial Neural Network')
 st.sidebar.header('User Input Parameters')
 
 st.subheader('User input parameters')
-st.subheader('Artificial Neural Network')
     
 # Funcion para poner los parametros del sidebar
 def user_input_parameters(): 
@@ -84,17 +83,16 @@ if st.button('RUN'):
     st.write(query_df)
 
     predict = model.predict(query_df)
-    st.write(predict)
+
     if predict >= 0.05:
         st.warning('Propenso a derrame')
-        st.text('Usted puede ejercitarse para evitarlo')
+        st.text('Algunas cosas que puede hacer para evitar un derrame cerebral')
+        st.image('https://www.clikisalud.net/wp-content/uploads/2017/10/pasos.png')
     else:
         st.success('No propenso a derrame')
 
 
+
+
     
-
-
-
-
 
