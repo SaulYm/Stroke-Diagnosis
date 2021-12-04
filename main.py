@@ -23,7 +23,7 @@ from sklearn import preprocessing
 model = ''
 #Cargar los datos
 if model == '':
-    model = load_model("ANN.h5")
+    model = load_model("ANN2.h5")
     
 # Titulo
 st.title('JAVIER SE LA COME')
@@ -90,8 +90,8 @@ if st.button('RUN'):
     query_df = preprocessing.normalize(query_df)
     query_df = np.asarray(query_df).astype(np.float16)
 
-    st.write(model.summary())
-    query_df = preprocessing.StandardScaler().transform(query_df)
+    #st.write(model.summary())
+    #query_df = preprocessing.StandardScaler().transform(query_df)
 
     st.write(query_df)
 
@@ -105,3 +105,4 @@ if st.button('RUN'):
 
 #if __name__ == '__main__':
     #main()
+
