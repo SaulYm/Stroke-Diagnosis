@@ -90,7 +90,7 @@ if st.button('RUN'):
     query_df = preprocessing.normalize(query_df)
     query_df = np.asarray(query_df).astype(np.float16)
 
-    st.write(model)
+    st.write(model.summary())
     query_df = preprocessing.StandardScaler().transform(query_df)
 
     st.write(query_df)
