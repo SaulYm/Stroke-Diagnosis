@@ -100,9 +100,11 @@ if st.button('RUN'):
     st.write(predict)
     if predict >= 0.05:
         st.warning('Propenso a derrame')
+        st.text('Usted puede ejercitarse para evitarlo')
     else:
         st.success('No propenso a derrame')
 
-#if __name__ == '__main__':
-    #main()
+
+    
+
 
