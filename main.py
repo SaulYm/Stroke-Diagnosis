@@ -80,8 +80,6 @@ if st.button('RUN'):
     query_df = preprocessing.normalize(query_df)
     query_df = np.asarray(query_df).astype(np.float16)
 
-    st.write(query_df)
-
     predict = model.predict(query_df)
 
     if predict >= 0.05:
