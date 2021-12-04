@@ -2,22 +2,13 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-#import tensorflow as tf
-#from tensorflow import keras
+
 from streamlit.elements.arrow import Data
 from streamlit.elements.legacy_altair import generate_chart
-
 from sklearn.preprocessing import StandardScaler
-
 from tensorflow.keras.models import load_model
-
-
 from sklearn import preprocessing
 
-#from tensorflow import keras
-#from tensorflow.keras.models import load_model
-#import tensorflow as tf
-#from keras.models import load_model
 
 
 model = ''
@@ -26,7 +17,7 @@ if model == '':
     model = load_model("ANN2.h5")
     
 # Titulo
-st.title('JAVIER SE LA COME')
+st.title('Stroke Prediction based on Artificial Neural Network')
 # Titulo del sidebar
 st.sidebar.header('User Input Parameters')
 
@@ -84,17 +75,13 @@ st.write(query_df)
 
 query_df = query_df.replace({"Male":0, "Female":1, "Other":2, "No":0, "Yes":1, "children":0,"Govt_job":1,"Never_worked":2,"Private":3,"Self-employed":4,
                          "Rural":0,"Urban":1,"formerly smoked":0, "never smoked":1, "smokes":2, "Unknown":3})
-#Falta arreglar esto ;v
+
 if st.button('RUN'):
 
     query_df = preprocessing.normalize(query_df)
     query_df = np.asarray(query_df).astype(np.float16)
 
-    #st.write(model.summary())
-    #query_df = preprocessing.StandardScaler().transform(query_df)
-
     st.write(query_df)
-
 
     predict = model.predict(query_df)
     st.write(predict)
@@ -106,5 +93,8 @@ if st.button('RUN'):
 
 
     
+
+
+
 
 
