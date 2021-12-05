@@ -14,7 +14,7 @@ from sklearn import preprocessing
 model = ''
 #Cargar los datos
 if model == '':
-    model = load_model("ANN2.h5")
+    model = load_model("ANN.h5")
     
 # Titulo
 st.title('Stroke Prediction based on Artificial Neural Network')
@@ -83,13 +83,13 @@ if st.button('RUN'):
     predict = model.predict(query_df)
 
     if predict >= 0.05:
-        st.warning('Propenso a derrame')
-        st.text('Algunas cosas que puede hacer para evitar un derrame cerebral')
+        st.warning('Propenso a sufrir un ACV')
+        st.text('Algunas medidas para prevenir un ACV')
         st.image('https://www.clikisalud.net/wp-content/uploads/2017/10/pasos.png')
+        st.image('https://scontent.flim2-1.fna.fbcdn.net/v/t1.6435-9/71035919_1232422356938185_9082812119627333632_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=730e14&_nc_ohc=ViMR4XuI0xgAX-HzkkR&_nc_ht=scontent.flim2-1.fna&oh=0eba68aa0f6fcf8f4ce0c52ab97b23b2&oe=61D28603')
     else:
-        st.success('No propenso a derrame')
-        st.text('insertar texto')
+        st.success('No propenso a sufrir un ACV')
+        st.text('Usted cuida su cerebro :)')
         st.image('https://grillodeyucatan.com/wp-content/uploads/2019/07/0723_CEREBRO2.jpg')
 
-    
 
