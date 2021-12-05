@@ -85,7 +85,6 @@ if st.button('RUN'):
     if predict >= 0.05:
         st.warning('Propenso a sufrir un ACV')
         st.text('Algunas medidas para prevenir un ACV')
-        st.image('https://www.clikisalud.net/wp-content/uploads/2017/10/pasos.png')
         st.image('https://scontent.flim2-1.fna.fbcdn.net/v/t1.6435-9/71035919_1232422356938185_9082812119627333632_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=730e14&_nc_ohc=ViMR4XuI0xgAX-HzkkR&_nc_ht=scontent.flim2-1.fna&oh=0eba68aa0f6fcf8f4ce0c52ab97b23b2&oe=61D28603')
     else:
         st.success('No propenso a sufrir un ACV')
